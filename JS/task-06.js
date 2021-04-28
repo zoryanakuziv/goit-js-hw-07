@@ -18,13 +18,10 @@ input.addEventListener('blur', onInputChange);
 function onInputChange(event) {
   const inputValue = event.currentTarget.value.length;
   if (inputValue !== +validLength) {
-    return (
-      event.currentTarget.classList.add('invalid'),
-      event.currentTarget.classList.remove('valid')
-    );
+    event.currentTarget.classList.add('invalid');
+    event.currentTarget.classList.remove('valid');
+    return;
   }
-  return (
-    event.currentTarget.classList.remove('invalid'),
-    event.currentTarget.classList.add('valid')
-  );
+  event.currentTarget.classList.remove('invalid');
+  event.currentTarget.classList.add('valid');
 }
